@@ -5,7 +5,7 @@ import { useLanguage } from "@/components/language-provider";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Mail, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 const technologies = [
@@ -37,28 +37,34 @@ const projects = [
   }
 ];
 
+const contactInfo = {
+  email: "christopherhayling9@gmail.com",
+  github: "https://github.com/chr1st0ph3r9",
+  linkedin: "https://www.linkedin.com/in/christopher19/"
+};
+
 export default function Home() {
   const { t, language } = useLanguage();
 
   return (
     <main className="container mx-auto px-4 pt-20">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="min-h-screen flex items-center justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <div className="text-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-6xl font-bold mb-6"
             initial={{ y: 20 }}
             animate={{ y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Full Stack Developer
+            {t("welcome")}
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
             initial={{ y: 20 }}
             animate={{ y: 0 }}
@@ -71,7 +77,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="py-20">
-        <motion.h2 
+        <motion.h2
           className="text-3xl font-bold mb-10 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -79,14 +85,14 @@ export default function Home() {
         >
           {t("skills")}
         </motion.h2>
-        <motion.div 
+        <motion.div
           className="flex flex-wrap justify-center gap-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           {technologies.map((tech, index) => (
-            <Badge 
+            <Badge
               key={tech}
               variant="secondary"
               className="text-lg py-2 px-4"
@@ -99,7 +105,7 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" className="py-20">
-        <motion.h2 
+        <motion.h2
           className="text-3xl font-bold mb-10 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -147,6 +153,61 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20">
+        <motion.h2
+          className="text-3xl font-bold mb-10 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          {t("contact")}
+        </motion.h2>
+        <motion.div
+          className="max-w-md mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <Card className="p-6">
+            <div className="space-y-4">
+              <Button
+                variant="outline"
+                className="w-full justify-start gap-2"
+                asChild
+              >
+                <a href={`mailto:${contactInfo.email}`}>
+                  <Mail className="h-5 w-5" />
+                  {contactInfo.email}
+                </a>
+              </Button>
+
+              <Button
+                variant="outline"
+                className="w-full justify-start gap-2"
+                asChild
+              >
+                <a href={contactInfo.github} target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                  GitHub
+                </a>
+              </Button>
+
+              <Button
+                variant="outline"
+                className="w-full justify-start gap-2"
+                asChild
+              >
+                <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                  LinkedIn
+                </a>
+              </Button>
+            </div>
+          </Card>
+        </motion.div>
       </section>
     </main>
   );
