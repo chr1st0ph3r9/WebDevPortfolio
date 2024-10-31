@@ -5,6 +5,7 @@ import * as MenubarPrimitive from '@radix-ui/react-menubar';
 import { Check, ChevronRight, Circle } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
+import { useEffect, useState } from 'react';
 
 const MenubarMenu = MenubarPrimitive.Menu;
 
@@ -15,6 +16,8 @@ const MenubarPortal = MenubarPrimitive.Portal;
 const MenubarSub = MenubarPrimitive.Sub;
 
 const MenubarRadioGroup = MenubarPrimitive.RadioGroup;
+
+const [isMounted, setIsMounted] = useState(false);
 
 const Menubar = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Root>,
@@ -148,10 +151,18 @@ const MenubarCheckboxItem = React.forwardRef<
 ));
 MenubarCheckboxItem.displayName = MenubarPrimitive.CheckboxItem.displayName;
 
+
+useEffect(() => {
+  setIsMounted(true);
+}, []);
+
 const MenubarRadioItem = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.RadioItem>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.RadioItem>
 >(({ className, children, ...props }, ref) => (
+
+
+
   <MenubarPrimitive.RadioItem
     ref={ref}
     className={cn(
@@ -162,7 +173,7 @@ const MenubarRadioItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <MenubarPrimitive.ItemIndicator>
-        <Circle className="h-2 w-2 fill-current" />
+        {isMounted && <Circle className="h-2 w-2 fill-current" />}
       </MenubarPrimitive.ItemIndicator>
     </span>
     {children}
