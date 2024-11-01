@@ -1,0 +1,57 @@
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 2px solid hsl(var(--foreground));
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.1s ease;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+.cursor-dot {
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--foreground));
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.15s ease-out;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+.link-grow {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: hsla(var(--foreground), 0.1);
+    border-color: hsla(var(--foreground), 0.5);
+}
+
+[data-theme="dark"] .custom-cursor {
+    border-color: hsl(var(--foreground));
+}
+
+[data-theme="dark"] .cursor-dot {
+    background: hsl(var(--foreground));
+}
+
+[data-theme="light"] .custom-cursor {
+    border-color: hsl(var(--foreground));
+}
+
+[data-theme="light"] .cursor-dot {
+    background: hsl(var(--foreground));
+}
+
+/* Ocultar cursores en dispositivos móviles */
+@media (max-width: 768px) {
+
+    .custom-cursor,
+    .cursor-dot {
+        display: none;
+    }
+}

@@ -12,6 +12,7 @@ interface LanguageContextType {
 
 const translations = {
   en: {
+    welcome: "Welcome!",
     about: "About Me",
     skills: "Skills",
     projects: "Projects",
@@ -22,10 +23,11 @@ const translations = {
     lightMode: "Light Mode",
   },
   es: {
+    welcome: "¡Bienvenido!",
     about: "Sobre Mí",
     skills: "Habilidades",
     projects: "Proyectos",
-    contact: "Contacto",
+    contact: "Contáctame",
     description: "¡Hola! Mi nombre es Christopher, soy un Desarrollador Full-stack de 25 años soy un apasionado de las nuevas tecnologías, las innovaciones que vienen con ellas y las experiencias que nos permiten tener. ¡Me encanta aprender cosas nuevas y encontrar nuevos desafíos!",
     viewProject: "Ver Proyecto",
     darkMode: "Modo Oscuro",
