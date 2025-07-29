@@ -44,7 +44,7 @@ const projects = [
       en: "A coffee shop e-commerce website built on Shopify platform with custom styling and functionality",
       es: "Un sitio web de comercio electrónico para cafetería construido en la plataforma Shopify con estilos y funcionalidad personalizados"
     },
-    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1200",
+    image: "/images/CafeAndinoImagen.png",
     link: "https://cafe-andino.com/",
     tech: ["Shopify", "CSS", "JavaScript", "Liquid"]
   },
