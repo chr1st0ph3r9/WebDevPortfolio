@@ -37,6 +37,26 @@ const projects = [
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200",
     link: "https://videogame-portfolio.vercel.app/",
     tech: ["Unity", "C#", "Game Development"]
+  },
+  {
+    title: "Cafe Andino",
+    description: {
+      en: "A coffee shop e-commerce website built on Shopify platform with custom styling and functionality",
+      es: "Un sitio web de comercio electrónico para cafetería construido en la plataforma Shopify con estilos y funcionalidad personalizados"
+    },
+    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1200",
+    link: "https://cafe-andino.com/",
+    tech: ["Shopify", "CSS", "JavaScript", "Liquid"]
+  },
+  {
+    title: "Mechatronik Group",
+    description: {
+      en: "An e-commerce store for mechatronic equipment and parts built with WordPress and modern web technologies",
+      es: "Una tienda de comercio electrónico para equipos y partes mecatrónicas construida con WordPress y tecnologías web modernas"
+    },
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200",
+    link: "https://mechatronik-group.com/",
+    tech: ["WordPress", "Elementor", "WooCommerce", "ReactJS", "CSS", "HTML", "SmartSlider"]
   }
 ];
 
