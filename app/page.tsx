@@ -107,7 +107,7 @@ export default function Home() {
           >
             <div className="relative w-64 h-64">
               <Image
-                src="images/imagen-perfil.jpg" // Reemplaza con el nombre real de tu imagen
+                src="images/FotoPerfil2.0.png" // Reemplaza con el nombre real de tu imagen
                 alt="Christopher Hayling"
                 fill
                 className="rounded-full object-cover filter drop-shadow 2px 4px 6px black grayscale 1"
